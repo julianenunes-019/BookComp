@@ -1,0 +1,1056 @@
+
+/* =========================
+   GERAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: #F3F4F6;
+  color: #26334d;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   LOGIN E CADASTRO
+========================= */
+
+.auth-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F3F4F6;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background: #FFFFFF;
+  border: 1px solid #dbe3ec;
+  border-top: 4px solid #1E3A8A;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(38, 51, 77, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.auth-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.auth-form h1 {
+  margin: 0;
+  text-align: center;
+  color: #1E3A8A;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.auth-form h2 {
+  margin: 0 0 18px;
+  text-align: center;
+  color: #64748b;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.auth-form label {
+  color: #26334d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  color: #26334d;
+  background: #FFFFFF;
+  transition: 0.2s;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #0b97f5;
+  box-shadow: 0 0 0 3px rgba(11, 151, 245, 0.10);
+}
+
+.auth-form > button[type="submit"] {
+  margin-top: 12px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #1E3A8A;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.auth-form > button[type="submit"]:hover {
+  background: #0b88f5;
+  transform: translateY(-1px);
+}
+
+.auth-form p {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.auth-form p button {
+  margin-left: 5px;
+  border: none;
+  background: none;
+  color: #1E3A8A;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-form p button:hover {
+  color: #0b88f5;
+  text-decoration: underline;
+}
+
+/* =========================
+   MENU LATERAL
+========================= */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  padding: 25px 16px;
+  background: #1E3A8A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 5px;
+}
+
+.sidebar-brand .logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: white;
+  border-radius: 10px;
+}
+
+.sidebar-brand h1 {
+  margin: 0;
+  color: white;
+  font-size: 23px;
+}
+
+.sidebar-brand p {
+  margin: 4px 0 0;
+  color: #dbeafe;
+  font-size: 12px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  margin: 25px 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-label {
+  margin: 0 0 12px 10px;
+  color: #bfdbfe;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-btn {
+  width: 100%;
+  padding: 13px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #eaf2ff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-btn span {
+  width: 20px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.sidebar-btn:hover {
+  background: rgba(255, 255, 255, 0.13);
+  color: white;
+}
+
+.sidebar-btn.active {
+  background: white;
+  color: #1E3A8A;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.sidebar-bottom p {
+  margin: 20px 0 0;
+  color: #bfdbfe;
+  font-size: 11px;
+  text-align: center;
+}
+
+.sair-btn {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  padding-top: 20px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.searchBox button,
+.add-btn,
+.remove-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.searchBox button,
+.remove-btn {
+  background: #1E3A8A;
+}
+
+.searchBox button:hover,
+.remove-btn:hover {
+  background: #0b88f5;
+}
+
+.add-btn {
+  background: #22c55e;
+}
+
+.add-btn:hover {
+  background: #16a34a;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: auto;
+  padding: 15px;
+  background: #1E3A8A;
+  color: white;
+  text-align: center;
+  border-top: 4px solid #0bb3f5;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.footer-message {
+  color: #cbd5e1;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+  width: 100%;
+  margin-top: 30px;
+}
+
+h2 {
+  margin-bottom: 12px;
+  color: #0f265c;
+}
+
+/* =========================
+   BUSCA
+========================= */
+
+.searchBox {
+  width: 100%;
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.searchBox input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #1E3A8A;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+}
+
+.searchBox input:focus {
+  border-color: #0baff5;
+}
+
+/* =========================
+   GRIDS
+========================= */
+
+.grid,
+.grid-busca {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+/* =========================
+   CARDS DE LIVROS
+========================= */
+
+.card,
+.card-busca,
+.card-biblioteca {
+  padding: 12px;
+  background: white;
+  border: 2px solid #0b97f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: 0.25s ease;
+}
+
+.card:hover,
+.card-busca:hover,
+.card-biblioteca:hover {
+  transform: translateY(-4px);
+  border-color: #1E3A8A;
+}
+
+.card-busca {
+  width: 235px;
+  min-height: 480px;
+}
+
+.card-biblioteca {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+/* =========================
+   IMAGENS
+========================= */
+
+.book-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #F3F4F6;
+}
+
+.card-busca .book-img,
+.card-biblioteca .book-img {
+  height: 300px;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  text-align: center;
+}
+
+/* =========================
+   TÍTULOS E AUTORES
+========================= */
+
+.book-title,
+.book-author {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-title {
+  margin: 5px 0;
+  color: #0f265c;
+}
+
+.book-author {
+  margin: 0;
+  color: #64748b;
+}
+
+/* =========================
+   FORMULÁRIO DE EDIÇÃO
+========================= */
+
+.form-edicao {
+  width: 100%;
+  max-width: 550px;
+  margin: 20px auto 30px;
+  padding: 25px;
+  background: white;
+  border: 2px solid #0b97f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-edicao h3 {
+  margin: 0 0 10px;
+  color: #0f265c;
+}
+
+.form-edicao label {
+  color: #26334d;
+  font-weight: 600;
+}
+
+.form-edicao input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+}
+
+.form-edicao input:focus {
+  border-color: #0b97f5;
+}
+
+/* =========================
+   PERFIL DO ADMINISTRADOR
+========================= */
+
+.perfil-container {
+  max-width: 1000px;
+  margin: 15px auto 35px;
+}
+
+.perfil-heading {
+  margin-bottom: 25px;
+}
+
+.perfil-heading h2 {
+  margin: 0;
+  color: #1E3A8A;
+  font-size: 27px;
+}
+
+.perfil-heading p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.perfil-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(38, 51, 77, 0.07);
+}
+
+.perfil-card-header {
+  padding: 25px 30px;
+  background: #eff6ff;
+  border-bottom: 1px solid #dbeafe;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.perfil-avatar {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #1E3A8A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.perfil-card-header h3 {
+  margin: 0;
+  color: #1E3A8A;
+  font-size: 19px;
+}
+
+.perfil-card-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.perfil-form {
+  padding: 30px;
+}
+
+.perfil-form-title {
+  margin-bottom: 25px;
+}
+
+.perfil-form-title h3 {
+  margin: 0;
+  color: #26334d;
+  font-size: 18px;
+}
+
+.perfil-form-title p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.perfil-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.perfil-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perfil-field label {
+  color: #26334d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.perfil-field input,
+.perfil-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #26334d;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.perfil-field input:focus,
+.perfil-field select:focus {
+  border-color: #0b97f5;
+  box-shadow: 0 0 0 3px rgba(11, 151, 245, 0.10);
+}
+
+.perfil-field input:disabled {
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.perfil-field small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.perfil-senha {
+  grid-column: 1 / -1;
+}
+
+.perfil-actions {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.perfil-btn {
+  min-width: 145px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.perfil-btn.voltar {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.perfil-btn.voltar:hover {
+  background: #cbd5e1;
+}
+
+.perfil-btn.salvar {
+  background: #1E3A8A;
+  color: white;
+}
+
+.perfil-btn.salvar:hover {
+  background: #0b88f5;
+}
+
+.mensagem-sucesso,
+.mensagem-erro {
+  margin: 20px 30px 0;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.mensagem-sucesso {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.mensagem-erro {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* =========================
+   PÁGINA DE EMPRÉSTIMOS
+========================= */
+
+.grid-biblioteca {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 285px));
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* INFORMAÇÃO DO ESTOQUE */
+
+.estoque-info {
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.estoque-info.disponivel {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.estoque-info.indisponivel {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ÁREA DE SOLICITAÇÃO */
+
+.area-emprestimo {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.area-emprestimo label {
+  color: #26334d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.area-emprestimo input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+}
+
+.area-emprestimo input:focus {
+  border-color: #0b97f5;
+}
+
+/* LIVRO SEM ESTOQUE */
+
+.status-indisponivel {
+  margin: 8px 0;
+  padding: 10px;
+  background: #fef2f2;
+  border-left: 3px solid #ef4444;
+  border-radius: 5px;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+/* =========================
+   PAGINAÇÃO
+========================= */
+
+.paginacao-container {
+  width: 100%;
+  margin: 20px 0 25px;
+  padding: 15px 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.paginacao-info {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.paginacao button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  color: #26334d;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.paginacao button:hover:not(:disabled):not(.pagina-ativa) {
+  background: #eff6ff;
+  border-color: #1E3A8A;
+}
+
+.paginacao button.pagina-ativa {
+  background: #1E3A8A;
+  border-color: #1E3A8A;
+  color: white;
+  font-weight: bold;
+}
+
+.paginacao button:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+/* =========================
+   NOTIFICAÇÕES TOAST
+========================= */
+
+.notificacao {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  min-width: 260px;
+  max-width: 350px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  font-weight: 600;
+  animation: aparecer 0.3s ease;
+}
+
+.notificacao.sucesso {
+  color: #15803d;
+  border-left: 4px solid #22c55e;
+}
+
+.notificacao.erro {
+  color: #b91c1c;
+  border-left: 4px solid #ef4444;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   MENSAGENS
+========================= */
+
+.empty,
+.loading-msg {
+  padding: 15px 0;
+  color: #64748b;
+}
+
+/* =========================
+   SELECT
+========================= */
+
+select {
+  padding: 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 215px;
+    min-width: 215px;
+  }
+
+  main.container {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .sidebar-brand .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sidebar-brand h1 {
+    font-size: 21px;
+  }
+
+  .sidebar-divider {
+    margin: 15px 0;
+  }
+
+  .sidebar-label {
+    margin-bottom: 8px;
+  }
+
+  .sidebar-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .sidebar-btn {
+    padding: 11px 9px;
+    font-size: 12px;
+  }
+
+  .sidebar-btn span {
+    font-size: 16px;
+  }
+
+  .sidebar-bottom {
+    padding-top: 12px;
+  }
+
+  .sidebar-bottom p {
+    margin-top: 10px;
+  }
+
+  .sair-btn {
+    border-top: none;
+    padding-top: 11px;
+  }
+
+  .app-content {
+    min-height: auto;
+  }
+
+  main.container {
+    padding: 15px;
+  }
+
+  .searchBox {
+    flex-direction: column;
+  }
+
+  .searchBox button {
+    width: 100%;
+  }
+
+  .grid,
+  .grid-busca {
+    justify-content: center;
+  }
+
+  .grid-biblioteca {
+    grid-template-columns: minmax(0, 320px);
+    justify-content: center;
+  }
+
+  .card-busca {
+    width: 100%;
+    max-width: 320px;
+    min-height: auto;
+  }
+
+  .auth-form {
+    padding: 25px 20px;
+  }
+
+  .auth-logo {
+    width: 85px;
+    height: 85px;
+  }
+
+  .form-edicao {
+    padding: 20px;
+  }
+
+  .notificacao {
+    left: 15px;
+    right: 15px;
+    min-width: auto;
+    max-width: none;
+  }
+
+  .paginacao-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+  }
+
+  .paginacao {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .paginacao button {
+    min-width: 32px;
+    padding: 0 8px;
+  }
+
+  .perfil-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-senha {
+    grid-column: auto;
+  }
+
+  .perfil-card-header,
+  .perfil-form {
+    padding: 20px;
+  }
+
+  .perfil-actions {
+    flex-direction: column-reverse;
+  }
+
+  .perfil-btn {
+    width: 100%;
+  }
+}
